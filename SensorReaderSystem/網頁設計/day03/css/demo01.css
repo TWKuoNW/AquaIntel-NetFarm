@@ -1,0 +1,16 @@
+/* id樣式表 */
+#p4{
+	background-color:pink;
+	font-size:24px;
+	font-weight:bolder;
+	font-style:italic;
+}
+
+/* 組合樣式 */
+div p{
+	color: blue;
+}
+
+div .f32{
+	font-size: 32px;
+}

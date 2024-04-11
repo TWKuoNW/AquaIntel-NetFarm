@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>表單學習</title>
+		<meta charset = "utf-8">
+	</head>
+	<body>
+		<form action = "demo05.html" method = "post">
+			暱稱: <input type = "text" name = "nickname" /><br>
+			密碼: <input type = "password" name = "pwd"/><br>
+			性別: <input type = "radio" name = "gender" value = "male"/>男
+				  <input type = "radio" name = "gender" value = "female" checked />女<br>
+			愛好: <input type = "checkbox" name = "hobby" value = "basketball"/>籃球
+				  <input type = "checkbox" name = "hobby" value = "football" checked />足球
+				  <input type = "checkbox" name = "hobby" value = "earth" checked />地球<br>
+			星座: <select name = "star">
+					<option value = "1">牡羊座</option>
+					<option value = "2" selected>天秤做</option>
+					<option value = "3">水瓶座</option>
+				  </select><br>
+			備註: <textarea name = "remark" rows = "4" cols="20"></textarea><br>
+			<input type = "submit" value = "註冊" /> 
+			<input type = "reset" value = "重置" />
+			<input type = "button" value = "這是一格普通按鈕" />			
+		</form>
+	</body>
+</html>
