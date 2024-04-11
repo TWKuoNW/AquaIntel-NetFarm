@@ -9,7 +9,7 @@ from Connector import Connector
 
 class Stats:
     def __init__(self):
-        self.ui = QUiLoader().load("AquaPlayerLand/ui/AquaPlayerUI.ui")    
+        self.ui = QUiLoader().load("AquaPilotPC/ui/AquaPlayerUI.ui")    
         self.isCapturing = False
         self.connector = None
         # self.cap = cv2.VideoCapture(0)
