@@ -3,9 +3,9 @@ from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import QTimer
 from PySide2.QtGui import QImage, QPixmap, QIcon
 from PySide2 import QtCore
+from Connector import Connector
 
 import cv2
-from Connector import Connector
 
 class Stats:
     def __init__(self):
