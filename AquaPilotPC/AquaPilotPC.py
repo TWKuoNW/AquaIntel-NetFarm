@@ -14,9 +14,10 @@ class Stats:
         self.connector = None
         # self.cap = cv2.VideoCapture(0)
         
-        self.ui.btnStrVideo0.clicked.connect(self.toggleCamera)
+        self.ui.btnStrVideo0.clicked.connect(self.toggleCamera) 
         self.ui.btnConn.clicked.connect(self.connMod)
         self.ui.btnClear.clicked.connect(self.clearFunc)
+        self.ui.btnSend.clicked.connect(self.sendCommand)
         
         self.ui.cbProbioticSprayer.stateChanged.connect(self.probioticSprayer)
         self.ui.cbAutoFeeder.stateChanged.connect(self.autoFeeder)
@@ -134,6 +135,12 @@ class Stats:
                 # print('關閉益生菌噴灑器')
         except AttributeError:
             self.ui.pteComm.appendPlainText("尚未開啟連線")
+    
+    def sendCommand(self):
+        self.connector.send_command(self.ui.lineEditSend.text())
+        printSendCommand = "向伺服器發送->" + self.ui.lineEditSend.text()
+        self.ui.pteComm.appendPlainText(printSendCommand)        
+        self.ui.lineEditSend.clear()
 
     def clearFunc(self):
         self.ui.pteComm.clear()

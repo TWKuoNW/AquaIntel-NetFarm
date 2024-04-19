@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1246</width>
+    <width>1251</width>
     <height>938</height>
    </rect>
   </property>
@@ -20,7 +20,7 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,3,0,1">
+   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,3,0,0">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_a">
       <property name="sizeConstraint">
@@ -958,13 +958,19 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLabel" name="labVideo2">
+      <item alignment="Qt::AlignTop">
+       <widget class="QLabel" name="label">
         <property name="minimumSize">
          <size>
           <width>320</width>
           <height>240</height>
          </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
         </property>
         <property name="text">
          <string>Video2</string>
@@ -993,7 +999,7 @@
          <widget class="QComboBox" name="comboBox_2"/>
         </item>
         <item>
-         <widget class="QPushButton" name="btnStrVideo2">
+         <widget class="QPushButton" name="pushButton_2">
           <property name="text">
            <string>開始</string>
           </property>
@@ -1014,13 +1020,30 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
-         <widget class="QPushButton" name="btnClear">
+         <widget class="QLineEdit" name="lineEditSend">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSend">
           <property name="text">
-           <string>清除</string>
+           <string>發送</string>
           </property>
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnClear">
+        <property name="text">
+         <string>清除</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -1031,7 +1054,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1246</width>
+     <width>1251</width>
      <height>25</height>
     </rect>
    </property>

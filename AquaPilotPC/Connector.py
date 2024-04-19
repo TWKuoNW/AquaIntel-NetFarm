@@ -58,11 +58,11 @@ class Connector(threading.Thread): # 建立一個連接器的class
     
     def send_PS_command(self, command):
         if(command == 0):
-            print("close")
+            # print("close")
             command = "ps0"
             self.client_socket.sendall(command.encode('utf-8'))
         elif(command == 1):
-            print("open")
+            # print("open")
             command = "ps1"
             self.client_socket.sendall(command.encode('utf-8'))
         else:
@@ -70,15 +70,18 @@ class Connector(threading.Thread): # 建立一個連接器的class
 
     def send_AF_command(self, command):
         if(command == 0):
-            print("close")
+            # print("close")
             command = "af0"
             self.client_socket.sendall(command.encode('utf-8'))
         elif(command == 1):
-            print("open")
+            # print("open")
             command = "af1"
             self.client_socket.sendall(command.encode('utf-8'))
         else:
             pass
+
+    def send_command(self, command):
+        self.client_socket.sendall(command.encode('utf-8'))
 
 # 使用示例
 if __name__ == "__main__":
