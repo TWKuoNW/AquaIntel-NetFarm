@@ -146,7 +146,7 @@ class Stats:
         self.ui.pteComm.clear()
 
 app = QApplication([])
-app.setWindowIcon(QIcon("img/logo3.png"))
+app.setWindowIcon(QIcon("AquaPilotPC/img/logo3.png"))
 
 stats = Stats()
 stats.ui.show()
