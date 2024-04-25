@@ -5,7 +5,7 @@ import time
 
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 model.eval()
-cap = cv2.VideoCapture('aiTest/t2.MOV')
+cap = cv2.VideoCapture('D:/video/t2.MOV')
 
 points = np.array([[0, 450], [640, 390], [640, 480], [0, 480]])
 
