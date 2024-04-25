@@ -100,6 +100,7 @@ while(cap.isOpened()):
     to_remove = []  # 初始化一個列表来存储需要刪除得軌跡得索引
     for i in range(len(trajectories)):  # 繪製所有軌跡
         cv2.arrowedLine(frame, trajectories[i][0], trajectories[i][-1], (0, 0, 255), 2, tipLength=0.1)
+        cv2.polylines(frame, [np.array(trajectories[i], dtype=np.int32)], isClosed=False, color=(100, 100, 255), thickness=1)
         check_crossing = determine_crossing(trajectories[i][0], trajectories[i][-1], p1, p2)
 
         if check_crossing == 1:
