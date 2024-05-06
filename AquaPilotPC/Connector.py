@@ -16,15 +16,25 @@ class Connector(threading.Thread): # 建立一個連接器的class
         self.hum = 0.0 # 初始化濕度參數
 
     def run(self): # 執行續啟動後會啟動該function
-        while not self.stopped():  # 不斷循環直到檢查到_stop_event被設定
+        while(not self.stopped()):  # 不斷循環直到檢查到_stop_event被設定
             try:
                 data = self.client_socket.recv(1024).decode("utf-8") # 從socket接收數據
-                if(data != ""): # 檢查是否收到退出信號
-                    data = data.strip().split(' ') # 將收到的data解析，strip()去除尾部的換行，.split(' ')分割資料
-                    #print(data)
+                if(data != ""): # 資料不等於空
+                    first_digit = data.split(' ')[0]
+                    # data = data.strip().split(' ') # 將收到的data解析，strip()去除尾部的換行，.split(' ')分割資料
+                    if(first_digit == '01'): # 判斷第一個字元是否為01，若是則執行以下
+                        print(f"收到溫濕度資料: {data}")
+                        self.temp = data.split(' ')[1] # 將溫度資料存入self.temp
+                        self.hum = data.split(' ')[2] # 將濕度資料存入self.hum
+                    elif(first_digit == '02'):
+                        pass
+                    elif(first_digit == '03'):
+                        pass
+                    """
                     self.temp = float(data[0])
                     self.hum = float(data[1])
-                
+                    """
+
                 elif(data == "EXIT"):
                     print("收到退出信號......")
                     self.send_exit_signal(self.client_socket) # 發送退出socket訊息
