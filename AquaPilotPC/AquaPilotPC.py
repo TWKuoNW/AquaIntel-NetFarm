@@ -46,8 +46,8 @@ class Stats:
                 w = 1920
                 h = 1080
             elif(quality == "1280*1024"):
-                w = 1280
-                h = 1024
+                w = 1152
+                h = 922
             elif(quality == "640*480"):
                 w = 640
                 h = 480
