@@ -1,6 +1,6 @@
 from PySide2.QtWidgets import QApplication, QMainWindow
 from PySide2.QtCore import QTimer
-from PySide2.QtGui import QImage, QPixmap
+from PySide2.QtGui import QImage, QPixmap, QIcon
 from PySide2 import QtCore
 from PySide2.QtCore import Slot
 
@@ -13,7 +13,9 @@ import threading
 class QMainWindow(QMainWindow): # 覆寫QMainWindow
     def __init__(self):
         super().__init__() # 呼叫父類別的建構函式
-        self.setStyleSheet("background-color: lightblue;") # 設定背景顏色
+        # self.setStyleSheet("background-color: lightblue;") # 設定背景顏色
+        self.setStyleSheet("background-color: #99FFFF;")
+        self.setWindowIcon(QIcon("AquaPilotPC/img/logo3.png"))
         self.connector = None # 初始化connector
 
     def add_connector(self, connector): # 新增connector
@@ -34,6 +36,7 @@ class MyApp():
 
         self.ui = Ui_AquaPlayer() # 創建UI
         self.ui.setupUi(self.window) # 設定UI
+        self.ui.labTitle.setStyleSheet("color: #666666;") # 設定label文字顏色
 
         self.isCapturing = False # 初始化isCapturing為False
         self.connector = None # 初始化connector為None
@@ -91,28 +94,29 @@ class MyApp():
             self.ui.labVideo0.setPixmap(QPixmap.fromImage(p))
     
     def toggleCamera(self): # 開啟/關閉相機
-        if self.isCapturing:
-            self.video0.stop()
-            self.isCapturing = False
-            self.ui.labVideo0.setText("video0")
-            self.ui.btnStrVideo0.setText("開始")
-            self.ui.pteComm.appendPlainText("相機關閉")
-        else:
-            self.video0.start(20)
-            self.isCapturing = True
-            self.ui.btnStrVideo0.setText("關閉")
-            self.ui.pteComm.appendPlainText("相機開啟")
-            
-            quality = self.ui.cbxQuality.currentText()
-            
-            if(quality == "1920*1080"):
-                self.ui.pteComm.appendPlainText("相機解析度設定1920*1080")
-            elif(quality == "1280*1024"):
-                self.ui.pteComm.appendPlainText("相機解析度設定1280*1024")
-            elif(quality == "640*480"):
-                self.ui.pteComm.appendPlainText("相機解析度設定640*480")
-            elif(quality == "320*240"):
-                self.ui.pteComm.appendPlainText("相機解析度設定320*240")
+        if(not self.cap == None):
+            if self.isCapturing:
+                self.video0.stop()
+                self.isCapturing = False
+                self.ui.labVideo0.setText("video0")
+                self.ui.btnStrVideo0.setText("開始")
+                self.ui.pteComm.appendPlainText("相機關閉")
+            else:
+                self.video0.start(20)
+                self.isCapturing = True
+                self.ui.btnStrVideo0.setText("關閉")
+                self.ui.pteComm.appendPlainText("相機開啟")
+                
+                quality = self.ui.cbxQuality.currentText()
+                
+                if(quality == "1920*1080"):
+                    self.ui.pteComm.appendPlainText("相機解析度設定1920*1080")
+                elif(quality == "1280*1024"):
+                    self.ui.pteComm.appendPlainText("相機解析度設定1280*1024")
+                elif(quality == "640*480"):
+                    self.ui.pteComm.appendPlainText("相機解析度設定640*480")
+                elif(quality == "320*240"):
+                    self.ui.pteComm.appendPlainText("相機解析度設定320*240")
         
     def connMod(self): # 連接模式
         port = 9999
