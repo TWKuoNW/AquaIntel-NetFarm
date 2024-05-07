@@ -23,7 +23,7 @@ class Connector(threading.Thread): # 建立一個連接器的class
                     first_digit = data.split(' ')[0]
                     # data = data.strip().split(' ') # 將收到的data解析，strip()去除尾部的換行，.split(' ')分割資料
                     if(first_digit == '01'): # 判斷第一個字元是否為01，若是則執行以下
-                        print(f"收到溫濕度資料: {data}")
+                        # print(f"收到溫濕度資料: {data}")
                         self.temp = data.split(' ')[1] # 將溫度資料存入self.temp
                         self.hum = data.split(' ')[2] # 將濕度資料存入self.hum
                     elif(first_digit == '02'):
