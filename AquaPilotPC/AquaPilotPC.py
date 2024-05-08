@@ -13,13 +13,12 @@ import threading
 class QMainWindow(QMainWindow): # 覆寫QMainWindow
     def __init__(self):
         super().__init__() # 呼叫父類別的建構函式
-        # self.setStyleSheet("background-color: lightblue;") # 設定背景顏色
-        self.setStyleSheet("background-color: #99FFFF;")
-        self.setWindowIcon(QIcon("AquaPilotPC/img/logo3.png"))
+        self.setStyleSheet("background-color: #E0E0E0;") # 設定背景顏色
+        self.setWindowIcon(QIcon("AquaPilotPC/img/logo3.png")) # 設定視窗icon
         self.connector = None # 初始化connector
 
     def add_connector(self, connector): # 新增connector
-        self.connector = connector 
+        self.connector = connector
         
     @Slot()
     def closeEvent(self, event): # 關閉視窗事件
@@ -36,7 +35,6 @@ class MyApp():
 
         self.ui = Ui_AquaPlayer() # 創建UI
         self.ui.setupUi(self.window) # 設定UI
-        self.ui.labTitle.setStyleSheet("color: #666666;") # 設定label文字顏色
 
         self.isCapturing = False # 初始化isCapturing為False
         self.connector = None # 初始化connector為None
@@ -63,20 +61,20 @@ class MyApp():
         self.app.exec_()
 
     def updateSensorValue(self): # 更新感測器數值
-        temp = self.connector.getTemp()  
+        temp = self.connector.getTemp()
         hum = self.connector.getHum()
-        self.ui.labTempValue.setText(str(temp))
+        self.ui.labTempValue.setText(str(temp)) 
         self.ui.labHumValue.setText(str(hum))
 
     def updateFrame(self): # 更新相機畫面
         ret, frame = self.cap.read()  
         if ret:
             rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            h, w, ch = rgbImage.shape
-            bytesPerLine = ch * w
-            convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format_RGB888)
-            
-            quality = self.ui.cbxQuality.currentText()
+            h, w, ch = rgbImage.shape # 高、寬、通道數
+            bytesPerLine = ch * w # 每行的字節數
+            convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format_RGB888) # 轉換成QImage格式
+            quality = self.ui.cbxQuality.currentText() # 取得解析度
+
             if(quality == "1920*1080"):
                 w = 1920
                 h = 1080
@@ -90,8 +88,8 @@ class MyApp():
                 w = 320
                 h = 240
             
-            p = convertToQtFormat.scaled(w, h, aspectRatioMode=QtCore.Qt.KeepAspectRatio)
-            self.ui.labVideo0.setPixmap(QPixmap.fromImage(p))
+            p = convertToQtFormat.scaled(w, h, aspectRatioMode=QtCore.Qt.KeepAspectRatio) # 保持長寬比
+            self.ui.labVideo0.setPixmap(QPixmap.fromImage(p)) # 顯示畫面
     
     def toggleCamera(self): # 開啟/關閉相機
         if(not self.cap == None):
