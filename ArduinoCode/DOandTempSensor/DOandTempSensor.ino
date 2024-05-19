@@ -3,15 +3,15 @@
 #include <DallasTemperature.h> 
 
 #define DO_PIN A1   // 溶氧感測器Pin
-#define DQ_Pin 2    // 溫度感測器Pin
+#define DQ_Pin 4    // 溫度感測器Pin
 
 #define VREF 5000    // 參考電壓Vref
 #define ADC_RES 1024 // 定義ADC分辨率
-#define TWO_POINT_CALIBRATION 0 // 是否使用兩點校正
+#define TWO_POINT_CALIBRATION 1 // 是否使用兩點校正
 
 // 單點校正
-#define CAL1_V (322) // 單位為mv
-#define CAL1_T (27)   // 單位℃
+#define CAL1_V (1600) // 單位為mv
+#define CAL1_T (25)   // 單位℃
 // 雙點校正，CAL1是高温校準點，CAL2是低温校準點
 #define CAL2_V (1300) // 單位為mv
 #define CAL2_T (15)   // 單位℃
@@ -26,7 +26,7 @@ const uint16_t DO_Table[41] = {
   7560, 7430, 7300, 7180, 7070, 6950, 6840, 6730, 6630, 6530, 6410
 };
 
-uint8_t Temperaturet;
+uint8_t Temperature;
 uint16_t ADC_Raw;
 uint16_t ADC_Voltage;
 uint16_t DO;
@@ -50,16 +50,28 @@ void setup()
 
 void loop()
 {
-  sensors.requestTemperatures();
+  if (Serial.available() > 0){
+    String inputString = Serial.readString();
+    // Serial.println(String(inputString));
 
-  Temperaturet = (uint8_t)sensors.getTempCByIndex(0);
-  ADC_Raw = analogRead(DO_PIN);
-  ADC_Voltage = uint32_t(VREF) * ADC_Raw / ADC_RES;
-
-  Serial.print("Temperaturet:\t" + String(Temperaturet) + "\t");
-  Serial.print("ADC RAW:\t" + String(ADC_Raw) + "\t");
-  Serial.print("ADC Voltage:\t" + String(ADC_Voltage) + "\t");
-  Serial.println("DO:\t" + String(readDO(ADC_Voltage, Temperaturet)) + "\t");
-
-  delay(1000);
+    if(inputString == "Temperature"){
+      sensors.requestTemperatures();
+      Temperature = (uint8_t)sensors.getTempCByIndex(0);
+      Serial.println(String(Temperature));
+    
+    }else if(inputString == "DO"){
+      sensors.requestTemperatures();
+      Temperature = (uint8_t)sensors.getTempCByIndex(0);
+      ADC_Raw = analogRead(DO_PIN);
+      ADC_Voltage = uint32_t(VREF) * ADC_Raw / ADC_RES;
+      Serial.println(readDO(ADC_Voltage, Temperature));
+    
+    }else if(inputString == "ALL"){
+      sensors.requestTemperatures();
+      Temperature = (uint8_t)sensors.getTempCByIndex(0);
+      ADC_Raw = analogRead(DO_PIN);
+      ADC_Voltage = uint32_t(VREF) * ADC_Raw / ADC_RES;
+      Serial.println(String(Temperature) + " " + readDO(ADC_Voltage, Temperature));
+    }
+  }
 }

@@ -47,9 +47,10 @@ void loop() {
     // deviceMod: 0 -> OUTPUT, 1 -> INPUT
     if (deviceMod == 0) {
       pinMode(GPIOPin, OUTPUT);
-    } else {
+    } else if(deviceMod == 1) {
       pinMode(GPIOPin, INPUT);
     }
+
     // status: 0 -> close, 1 -> open
     if (status == 0) {
       digitalWrite(GPIOPin, HIGH);

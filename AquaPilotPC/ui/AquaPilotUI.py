@@ -68,13 +68,6 @@ class Ui_AquaPlayer(object):
 
         self.horizontalLayout_16 = QHBoxLayout()
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.line_4 = QFrame(self.centralwidget)
-        self.line_4.setObjectName(u"line_4")
-        self.line_4.setFrameShape(QFrame.VLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
-
-        self.horizontalLayout_16.addWidget(self.line_4)
-
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.labNameTitle = QLabel(self.centralwidget)
@@ -93,7 +86,7 @@ class Ui_AquaPlayer(object):
         font1.setWeight(75)
         self.labNameTitle.setFont(font1)
 
-        self.verticalLayout_3.addWidget(self.labNameTitle)
+        self.verticalLayout_3.addWidget(self.labNameTitle, 0, Qt.AlignHCenter)
 
         self.labName = QLabel(self.centralwidget)
         self.labName.setObjectName(u"labName")
@@ -102,7 +95,7 @@ class Ui_AquaPlayer(object):
         self.labName.setMinimumSize(QSize(0, 30))
         self.labName.setMaximumSize(QSize(16777215, 40))
 
-        self.verticalLayout_3.addWidget(self.labName)
+        self.verticalLayout_3.addWidget(self.labName, 0, Qt.AlignHCenter)
 
 
         self.horizontalLayout_16.addLayout(self.verticalLayout_3)
@@ -127,7 +120,7 @@ class Ui_AquaPlayer(object):
         self.labIPTitle.setMaximumSize(QSize(16777215, 40))
         self.labIPTitle.setFont(font1)
 
-        self.verticalLayout_2.addWidget(self.labIPTitle)
+        self.verticalLayout_2.addWidget(self.labIPTitle, 0, Qt.AlignHCenter)
 
         self.labIP = QLabel(self.centralwidget)
         self.labIP.setObjectName(u"labIP")
@@ -136,7 +129,7 @@ class Ui_AquaPlayer(object):
         self.labIP.setMinimumSize(QSize(100, 30))
         self.labIP.setMaximumSize(QSize(16777215, 40))
 
-        self.verticalLayout_2.addWidget(self.labIP)
+        self.verticalLayout_2.addWidget(self.labIP, 0, Qt.AlignHCenter)
 
 
         self.horizontalLayout_16.addLayout(self.verticalLayout_2)
@@ -159,7 +152,7 @@ class Ui_AquaPlayer(object):
         self.labStatusTitle.setMaximumSize(QSize(16777215, 40))
         self.labStatusTitle.setFont(font1)
 
-        self.verticalLayout_4.addWidget(self.labStatusTitle)
+        self.verticalLayout_4.addWidget(self.labStatusTitle, 0, Qt.AlignHCenter)
 
         self.labStatus = QLabel(self.centralwidget)
         self.labStatus.setObjectName(u"labStatus")
@@ -168,7 +161,7 @@ class Ui_AquaPlayer(object):
         self.labStatus.setMinimumSize(QSize(0, 30))
         self.labStatus.setMaximumSize(QSize(16777215, 40))
 
-        self.verticalLayout_4.addWidget(self.labStatus)
+        self.verticalLayout_4.addWidget(self.labStatus, 0, Qt.AlignHCenter)
 
 
         self.horizontalLayout_16.addLayout(self.verticalLayout_4)
@@ -183,7 +176,7 @@ class Ui_AquaPlayer(object):
         sizePolicy1.setHeightForWidth(self.labNameKeyinTitle.sizePolicy().hasHeightForWidth())
         self.labNameKeyinTitle.setSizePolicy(sizePolicy1)
         self.labNameKeyinTitle.setMinimumSize(QSize(0, 30))
-        self.labNameKeyinTitle.setMaximumSize(QSize(16777215, 40))
+        self.labNameKeyinTitle.setMaximumSize(QSize(40, 40))
         self.labNameKeyinTitle.setFont(font1)
 
         self.horizontalLayout_14.addWidget(self.labNameKeyinTitle, 0, Qt.AlignHCenter)
@@ -196,9 +189,12 @@ class Ui_AquaPlayer(object):
         sizePolicy3.setHeightForWidth(self.txtName.sizePolicy().hasHeightForWidth())
         self.txtName.setSizePolicy(sizePolicy3)
         self.txtName.setMinimumSize(QSize(0, 30))
+        self.txtName.setMaximumSize(QSize(16777215, 30))
 
         self.horizontalLayout_14.addWidget(self.txtName)
 
+        self.horizontalLayout_14.setStretch(0, 1)
+        self.horizontalLayout_14.setStretch(1, 4)
 
         self.layout_A1.addLayout(self.horizontalLayout_14)
 
@@ -209,7 +205,7 @@ class Ui_AquaPlayer(object):
         sizePolicy1.setHeightForWidth(self.labIPKeyinTitle.sizePolicy().hasHeightForWidth())
         self.labIPKeyinTitle.setSizePolicy(sizePolicy1)
         self.labIPKeyinTitle.setMinimumSize(QSize(0, 30))
-        self.labIPKeyinTitle.setMaximumSize(QSize(16777215, 40))
+        self.labIPKeyinTitle.setMaximumSize(QSize(40, 40))
         self.labIPKeyinTitle.setFont(font1)
 
         self.horizontalLayout.addWidget(self.labIPKeyinTitle, 0, Qt.AlignHCenter)
@@ -219,9 +215,12 @@ class Ui_AquaPlayer(object):
         sizePolicy3.setHeightForWidth(self.txtIP.sizePolicy().hasHeightForWidth())
         self.txtIP.setSizePolicy(sizePolicy3)
         self.txtIP.setMinimumSize(QSize(0, 30))
+        self.txtIP.setMaximumSize(QSize(16777215, 30))
 
         self.horizontalLayout.addWidget(self.txtIP)
 
+        self.horizontalLayout.setStretch(0, 1)
+        self.horizontalLayout.setStretch(1, 4)
 
         self.layout_A1.addLayout(self.horizontalLayout)
 
@@ -234,7 +233,7 @@ class Ui_AquaPlayer(object):
         self.btnConn = QPushButton(self.centralwidget)
         self.btnConn.setObjectName(u"btnConn")
         self.btnConn.setMinimumSize(QSize(100, 30))
-        self.btnConn.setMaximumSize(QSize(16777215, 40))
+        self.btnConn.setMaximumSize(QSize(100, 30))
 
         self.horizontalLayout_13.addWidget(self.btnConn)
 
@@ -246,6 +245,8 @@ class Ui_AquaPlayer(object):
 
         self.line_3 = QFrame(self.centralwidget)
         self.line_3.setObjectName(u"line_3")
+        self.line_3.setMinimumSize(QSize(220, 0))
+        self.line_3.setMaximumSize(QSize(16777215, 16777215))
         self.line_3.setFrameShape(QFrame.HLine)
         self.line_3.setFrameShadow(QFrame.Sunken)
 
@@ -272,17 +273,28 @@ class Ui_AquaPlayer(object):
         self.labDev1.setObjectName(u"labDev1")
         sizePolicy1.setHeightForWidth(self.labDev1.sizePolicy().hasHeightForWidth())
         self.labDev1.setSizePolicy(sizePolicy1)
-        self.labDev1.setMinimumSize(QSize(100, 60))
+        self.labDev1.setMinimumSize(QSize(100, 70))
+        self.labDev1.setLayoutDirection(Qt.LeftToRight)
+        self.labDev1.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_9.addWidget(self.labDev1)
+        self.horizontalLayout_9.addWidget(self.labDev1, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_9.addItem(self.horizontalSpacer_9)
 
         self.labDev1Status = QLabel(self.centralwidget)
         self.labDev1Status.setObjectName(u"labDev1Status")
         sizePolicy1.setHeightForWidth(self.labDev1Status.sizePolicy().hasHeightForWidth())
         self.labDev1Status.setSizePolicy(sizePolicy1)
-        self.labDev1Status.setMinimumSize(QSize(40, 0))
+        self.labDev1Status.setMinimumSize(QSize(50, 0))
+        self.labDev1Status.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_9.addWidget(self.labDev1Status)
+
+        self.horizontalSpacer_7 = QSpacerItem(10, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_9.addItem(self.horizontalSpacer_7)
 
         self.cbAutoFeeder = QCheckBox(self.centralwidget)
         self.cbAutoFeeder.setObjectName(u"cbAutoFeeder")
@@ -290,8 +302,9 @@ class Ui_AquaPlayer(object):
         self.horizontalLayout_9.addWidget(self.cbAutoFeeder)
 
         self.horizontalLayout_9.setStretch(0, 2)
-        self.horizontalLayout_9.setStretch(1, 2)
         self.horizontalLayout_9.setStretch(2, 1)
+        self.horizontalLayout_9.setStretch(3, 1)
+        self.horizontalLayout_9.setStretch(4, 1)
 
         self.layout_A2.addLayout(self.horizontalLayout_9)
 
@@ -301,18 +314,28 @@ class Ui_AquaPlayer(object):
         self.labDev2.setObjectName(u"labDev2")
         sizePolicy1.setHeightForWidth(self.labDev2.sizePolicy().hasHeightForWidth())
         self.labDev2.setSizePolicy(sizePolicy1)
-        self.labDev2.setMinimumSize(QSize(100, 60))
+        self.labDev2.setMinimumSize(QSize(100, 70))
+        self.labDev2.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_8.addWidget(self.labDev2)
+        self.horizontalLayout_8.addWidget(self.labDev2, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_8.addItem(self.horizontalSpacer_10)
 
         self.labDev2Status = QLabel(self.centralwidget)
         self.labDev2Status.setObjectName(u"labDev2Status")
         sizePolicy1.setHeightForWidth(self.labDev2Status.sizePolicy().hasHeightForWidth())
         self.labDev2Status.setSizePolicy(sizePolicy1)
-        self.labDev2Status.setMinimumSize(QSize(40, 0))
+        self.labDev2Status.setMinimumSize(QSize(50, 0))
         self.labDev2Status.setAutoFillBackground(False)
+        self.labDev2Status.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_8.addWidget(self.labDev2Status)
+
+        self.horizontalSpacer_8 = QSpacerItem(10, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_8.addItem(self.horizontalSpacer_8)
 
         self.cbProbioticSprayer = QCheckBox(self.centralwidget)
         self.cbProbioticSprayer.setObjectName(u"cbProbioticSprayer")
@@ -320,8 +343,9 @@ class Ui_AquaPlayer(object):
         self.horizontalLayout_8.addWidget(self.cbProbioticSprayer)
 
         self.horizontalLayout_8.setStretch(0, 2)
-        self.horizontalLayout_8.setStretch(1, 2)
         self.horizontalLayout_8.setStretch(2, 1)
+        self.horizontalLayout_8.setStretch(3, 1)
+        self.horizontalLayout_8.setStretch(4, 1)
 
         self.layout_A2.addLayout(self.horizontalLayout_8)
 
@@ -356,8 +380,19 @@ class Ui_AquaPlayer(object):
         sizePolicy1.setHeightForWidth(self.labTemp.sizePolicy().hasHeightForWidth())
         self.labTemp.setSizePolicy(sizePolicy1)
         self.labTemp.setMinimumSize(QSize(0, 60))
+        font2 = QFont()
+        font2.setBold(False)
+        font2.setItalic(False)
+        font2.setWeight(50)
+        font2.setStrikeOut(False)
+        font2.setKerning(True)
+        font2.setStyleStrategy(QFont.PreferDefault)
+        self.labTemp.setFont(font2)
+        self.labTemp.setCursor(QCursor(Qt.ArrowCursor))
+        self.labTemp.setMouseTracking(False)
+        self.labTemp.setTabletTracking(True)
 
-        self.tempLayout.addWidget(self.labTemp, 0, Qt.AlignVCenter)
+        self.tempLayout.addWidget(self.labTemp, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
         self.labTempValue = QLabel(self.centralwidget)
         self.labTempValue.setObjectName(u"labTempValue")
@@ -367,7 +402,7 @@ class Ui_AquaPlayer(object):
         sizePolicy4.setHeightForWidth(self.labTempValue.sizePolicy().hasHeightForWidth())
         self.labTempValue.setSizePolicy(sizePolicy4)
 
-        self.tempLayout.addWidget(self.labTempValue)
+        self.tempLayout.addWidget(self.labTempValue, 0, Qt.AlignHCenter)
 
         self.tempLayout.setStretch(0, 1)
         self.tempLayout.setStretch(1, 1)
@@ -382,14 +417,14 @@ class Ui_AquaPlayer(object):
         self.labHum.setSizePolicy(sizePolicy1)
         self.labHum.setMinimumSize(QSize(0, 60))
 
-        self.humLayout.addWidget(self.labHum)
+        self.humLayout.addWidget(self.labHum, 0, Qt.AlignHCenter)
 
         self.labHumValue = QLabel(self.centralwidget)
         self.labHumValue.setObjectName(u"labHumValue")
         sizePolicy4.setHeightForWidth(self.labHumValue.sizePolicy().hasHeightForWidth())
         self.labHumValue.setSizePolicy(sizePolicy4)
 
-        self.humLayout.addWidget(self.labHumValue)
+        self.humLayout.addWidget(self.labHumValue, 0, Qt.AlignHCenter)
 
         self.humLayout.setStretch(0, 1)
         self.humLayout.setStretch(1, 1)
@@ -404,14 +439,14 @@ class Ui_AquaPlayer(object):
         self.labDO.setSizePolicy(sizePolicy1)
         self.labDO.setMinimumSize(QSize(0, 60))
 
-        self.DOLayout.addWidget(self.labDO)
+        self.DOLayout.addWidget(self.labDO, 0, Qt.AlignHCenter)
 
         self.labDOValue = QLabel(self.centralwidget)
         self.labDOValue.setObjectName(u"labDOValue")
         sizePolicy4.setHeightForWidth(self.labDOValue.sizePolicy().hasHeightForWidth())
         self.labDOValue.setSizePolicy(sizePolicy4)
 
-        self.DOLayout.addWidget(self.labDOValue)
+        self.DOLayout.addWidget(self.labDOValue, 0, Qt.AlignHCenter)
 
         self.DOLayout.setStretch(0, 1)
         self.DOLayout.setStretch(1, 1)
@@ -426,14 +461,14 @@ class Ui_AquaPlayer(object):
         self.labPH.setSizePolicy(sizePolicy1)
         self.labPH.setMinimumSize(QSize(0, 60))
 
-        self.pHLayout.addWidget(self.labPH)
+        self.pHLayout.addWidget(self.labPH, 0, Qt.AlignHCenter)
 
         self.labPHValue = QLabel(self.centralwidget)
         self.labPHValue.setObjectName(u"labPHValue")
         sizePolicy4.setHeightForWidth(self.labPHValue.sizePolicy().hasHeightForWidth())
         self.labPHValue.setSizePolicy(sizePolicy4)
 
-        self.pHLayout.addWidget(self.labPHValue)
+        self.pHLayout.addWidget(self.labPHValue, 0, Qt.AlignHCenter)
 
         self.pHLayout.setStretch(0, 1)
         self.pHLayout.setStretch(1, 1)
@@ -442,25 +477,37 @@ class Ui_AquaPlayer(object):
 
         self.ORPLayout = QHBoxLayout()
         self.ORPLayout.setObjectName(u"ORPLayout")
-        self.labORPValue = QLabel(self.centralwidget)
-        self.labORPValue.setObjectName(u"labORPValue")
-        sizePolicy1.setHeightForWidth(self.labORPValue.sizePolicy().hasHeightForWidth())
-        self.labORPValue.setSizePolicy(sizePolicy1)
-        self.labORPValue.setMinimumSize(QSize(0, 60))
-
-        self.ORPLayout.addWidget(self.labORPValue)
-
         self.labORP = QLabel(self.centralwidget)
         self.labORP.setObjectName(u"labORP")
-        sizePolicy4.setHeightForWidth(self.labORP.sizePolicy().hasHeightForWidth())
-        self.labORP.setSizePolicy(sizePolicy4)
+        sizePolicy1.setHeightForWidth(self.labORP.sizePolicy().hasHeightForWidth())
+        self.labORP.setSizePolicy(sizePolicy1)
+        self.labORP.setMinimumSize(QSize(0, 60))
 
-        self.ORPLayout.addWidget(self.labORP)
+        self.ORPLayout.addWidget(self.labORP, 0, Qt.AlignHCenter)
 
-        self.ORPLayout.setStretch(0, 1)
+        self.labORPValue = QLabel(self.centralwidget)
+        self.labORPValue.setObjectName(u"labORPValue")
+        sizePolicy4.setHeightForWidth(self.labORPValue.sizePolicy().hasHeightForWidth())
+        self.labORPValue.setSizePolicy(sizePolicy4)
+
+        self.ORPLayout.addWidget(self.labORPValue, 0, Qt.AlignHCenter)
+
         self.ORPLayout.setStretch(1, 1)
 
         self.layout_A3.addLayout(self.ORPLayout)
+
+        self.horizontalLayout_data_plot = QHBoxLayout()
+        self.horizontalLayout_data_plot.setObjectName(u"horizontalLayout_data_plot")
+        self.btnStrPlot = QPushButton(self.centralwidget)
+        self.btnStrPlot.setObjectName(u"btnStrPlot")
+        self.btnStrPlot.setMinimumSize(QSize(100, 30))
+        self.btnStrPlot.setMaximumSize(QSize(10000, 30))
+
+        self.horizontalLayout_data_plot.addWidget(self.btnStrPlot)
+
+        self.horizontalLayout_data_plot.setStretch(0, 3)
+
+        self.layout_A3.addLayout(self.horizontalLayout_data_plot)
 
 
         self.verticalLayout_a.addLayout(self.layout_A3)
@@ -545,10 +592,10 @@ class Ui_AquaPlayer(object):
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_2)
 
-        self.comboBox = QComboBox(self.centralwidget)
-        self.comboBox.setObjectName(u"comboBox")
+        self.cbxQuality_2 = QComboBox(self.centralwidget)
+        self.cbxQuality_2.setObjectName(u"cbxQuality_2")
 
-        self.horizontalLayout_5.addWidget(self.comboBox)
+        self.horizontalLayout_5.addWidget(self.cbxQuality_2)
 
         self.btnStrVideo1 = QPushButton(self.centralwidget)
         self.btnStrVideo1.setObjectName(u"btnStrVideo1")
@@ -565,14 +612,14 @@ class Ui_AquaPlayer(object):
 
         self.verticalLayout_c.addWidget(self.line_2)
 
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setMinimumSize(QSize(320, 240))
-        self.label.setLayoutDirection(Qt.LeftToRight)
-        self.label.setAutoFillBackground(False)
-        self.label.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
+        self.labVideo2 = QLabel(self.centralwidget)
+        self.labVideo2.setObjectName(u"labVideo2")
+        self.labVideo2.setMinimumSize(QSize(320, 240))
+        self.labVideo2.setLayoutDirection(Qt.LeftToRight)
+        self.labVideo2.setAutoFillBackground(False)
+        self.labVideo2.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
 
-        self.verticalLayout_c.addWidget(self.label, 0, Qt.AlignTop)
+        self.verticalLayout_c.addWidget(self.labVideo2, 0, Qt.AlignTop)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
@@ -580,15 +627,15 @@ class Ui_AquaPlayer(object):
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_3)
 
-        self.comboBox_2 = QComboBox(self.centralwidget)
-        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.cbxQuality_3 = QComboBox(self.centralwidget)
+        self.cbxQuality_3.setObjectName(u"cbxQuality_3")
 
-        self.horizontalLayout_6.addWidget(self.comboBox_2)
+        self.horizontalLayout_6.addWidget(self.cbxQuality_3)
 
-        self.pushButton_2 = QPushButton(self.centralwidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.btnStrVideo2 = QPushButton(self.centralwidget)
+        self.btnStrVideo2.setObjectName(u"btnStrVideo2")
 
-        self.horizontalLayout_6.addWidget(self.pushButton_2)
+        self.horizontalLayout_6.addWidget(self.btnStrVideo2)
 
 
         self.verticalLayout_c.addLayout(self.horizontalLayout_6)
@@ -680,8 +727,9 @@ class Ui_AquaPlayer(object):
         self.labDOValue.setText(QCoreApplication.translate("AquaPlayer", u"0.0", None))
         self.labPH.setText(QCoreApplication.translate("AquaPlayer", u"pH\u503c", None))
         self.labPHValue.setText(QCoreApplication.translate("AquaPlayer", u"0.0", None))
-        self.labORPValue.setText(QCoreApplication.translate("AquaPlayer", u"ORP", None))
-        self.labORP.setText(QCoreApplication.translate("AquaPlayer", u"0.0", None))
+        self.labORP.setText(QCoreApplication.translate("AquaPlayer", u"\u6c34\u6eab", None))
+        self.labORPValue.setText(QCoreApplication.translate("AquaPlayer", u"0.0", None))
+        self.btnStrPlot.setText(QCoreApplication.translate("AquaPlayer", u"\u555f\u52d5\u7dda\u5716", None))
         self.labVideo0.setText(QCoreApplication.translate("AquaPlayer", u"video0", None))
         self.cbxQuality.setItemText(0, QCoreApplication.translate("AquaPlayer", u"1920*1080", None))
         self.cbxQuality.setItemText(1, QCoreApplication.translate("AquaPlayer", u"1280*1024", None))
@@ -691,8 +739,8 @@ class Ui_AquaPlayer(object):
         self.btnStrVideo0.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
         self.labVideo1.setText(QCoreApplication.translate("AquaPlayer", u"Video1", None))
         self.btnStrVideo1.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
-        self.label.setText(QCoreApplication.translate("AquaPlayer", u"Video2", None))
-        self.pushButton_2.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
+        self.labVideo2.setText(QCoreApplication.translate("AquaPlayer", u"Video2", None))
+        self.btnStrVideo2.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
         self.btnSend.setText(QCoreApplication.translate("AquaPlayer", u"\u767c\u9001", None))
         self.btnClear.setText(QCoreApplication.translate("AquaPlayer", u"\u6e05\u9664", None))
     # retranslateUi

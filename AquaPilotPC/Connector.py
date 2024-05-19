@@ -14,6 +14,8 @@ class Connector(threading.Thread): # 建立一個連接器的class
         self._stop_event = threading.Event() # 創建一個事件，用於執行續的同步
         self.temp = 0.0 # 初始化溫度參數
         self.hum = 0.0 # 初始化濕度參數
+        self.water_temp = 0.0 # 初始化水溫參數
+        self.DO = 0.0 # 初始化溶氧參數
 
     def run(self): # 執行續啟動後會啟動該function
         while(not self.stopped()):  # 不斷循環直到檢查到_stop_event被設定
@@ -27,7 +29,9 @@ class Connector(threading.Thread): # 建立一個連接器的class
                         self.temp = data.split(' ')[1] # 將溫度資料存入self.temp
                         self.hum = data.split(' ')[2] # 將濕度資料存入self.hum
                     elif(first_digit == '02'):
-                        pass
+                        self.water_temp = data.split(' ')[1] # 將溫度資料存入self.temp
+                        self.DO = data.split(' ')[2] # 將濕度資料存入self.hum
+                        
                     elif(first_digit == '03'):
                         pass
                     """
@@ -55,6 +59,12 @@ class Connector(threading.Thread): # 建立一個連接器的class
     
     def getHum(self):
         return self.hum
+    
+    def getWaterTemp(self):
+        return self.water_temp
+    
+    def getDO(self):    
+        return self.DO
         
     def stop(self):
         self._stop_event.set() # 建立_stop_event標示為True，用於通知執行續的停止
