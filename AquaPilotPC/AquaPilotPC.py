@@ -217,8 +217,8 @@ class MyApp():
 
         self.ui.labName.setText(str(name))
         self.ui.labIP.setText(str(ip))
-        video0_url = 'http://' + str(ip) + ':8000/video'
-        video1_url = 'http://' + str(ip) + ':8001/video'
+        video0_url = 'http://' + str(ip) + ':8001/video'
+        video1_url = 'http://' + str(ip) + ':8000/video'
         # print(video0_url)
         self.cap0 = cv2.VideoCapture(video0_url)
         self.cap1 = cv2.VideoCapture(video1_url)
